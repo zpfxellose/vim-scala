@@ -37,6 +37,7 @@ Plugin 'fugalh/desert.vim'
 Plugin 'jtai/vim-womprat'
 Plugin 'zeis/vim-kolor'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,6 +48,7 @@ syntax enable
 set background=dark
 " let g:solarized_termcolors=256
 colorscheme womprat
+set background=dark
 
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -107,3 +109,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+
+let g:indentLine_enabled = 1
+

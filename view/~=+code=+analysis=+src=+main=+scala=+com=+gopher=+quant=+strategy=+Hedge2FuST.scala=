@@ -77,12 +77,12 @@ normal! zc
 normal! zc
 694
 normal! zc
-let s:l = 804 - ((6 * winheight(0) + 29) / 59)
+let s:l = 952 - ((20 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-804
-normal! 04|
+952
+normal! 05|
 lcd ~/code/analysis
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
