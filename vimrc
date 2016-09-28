@@ -26,7 +26,7 @@ Plugin 'jiangmiao/auto-pairs'
 " snippets
 Plugin 'SirVer/ultisnips'
 
-" Plugin 'jacoborus/tender'
+Plugin 'jacoborus/tender'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'altercation/vim-colors-solarized'
@@ -47,40 +47,14 @@ filetype plugin on    " required
 syntax enable
 set background=dark
 " let g:solarized_termcolors=256
-colorscheme womprat
+colorscheme gruvbox
 set background=dark
 
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
-" If you have vim >=8.0 or Neovim >= 0.1.5
-" if (has("termguicolors"))
- " set termguicolors
-" endif
-"
-"  For Neovim 0.1.3 and 0.1.4
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-" Theme
-" syntax enable
-" colorscheme tender
-"
 " folding
 set foldmethod=manual   "fold manually
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
-
-
 
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
@@ -91,6 +65,10 @@ nnoremap <S-Left> :tabprevious<CR>
 nnoremap <S-Right> :tabnext<CR>
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+
+" save sessions
+nnoremap <C-s> :wa<CR>:mksession! ~/session.vim<CR>
+nnoremap <C-x> :wa<CR>:mksession! ~/session.vim<CR>:qa<CR>
 
 nnoremap <C-y> kyyp
 
@@ -111,4 +89,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 let g:indentLine_enabled = 1
+
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+set clipboard=unnamed
+
+vmap <C-c> "+y
+
 

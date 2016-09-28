@@ -47,8 +47,6 @@ normal! zc
 normal! zc
 185
 normal! zc
-198
-normal! zc
 250
 normal! zc
 292
@@ -77,12 +75,12 @@ normal! zc
 normal! zc
 694
 normal! zc
-let s:l = 952 - ((20 * winheight(0) + 23) / 46)
+let s:l = 200 - ((36 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-952
-normal! 05|
+200
+normal! 0
 lcd ~/code/analysis
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
