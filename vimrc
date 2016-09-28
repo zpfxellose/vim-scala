@@ -38,6 +38,7 @@ Plugin 'jtai/vim-womprat'
 Plugin 'zeis/vim-kolor'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Yggdroot/indentLine'
+Plugin 'wincent/vim-clipper'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -95,5 +96,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set clipboard=unnamed
 
 vmap <C-c> "+y
+
+set fileencodings=utf-8,gb18030,utf-16,big5
 
 
