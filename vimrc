@@ -2,6 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 set t_Co=256
+set t_ut=
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_clear_cache_on_exit = 0
@@ -37,7 +38,8 @@ Plugin 'fugalh/desert.vim'
 Plugin 'jtai/vim-womprat'
 Plugin 'zeis/vim-kolor'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'Yggdroot/indentLine'
+Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'Yggdroot/indentLine'
 Plugin 'wincent/vim-clipper'
 
 " All of your Plugins must be added before the following line
@@ -67,9 +69,14 @@ nnoremap <S-Right> :tabnext<CR>
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
+nnoremap J 4j
+nnoremap K 4k
+nnoremap H 4h
+nnoremap L 4l
+
 " save sessions
-nnoremap <C-s> :wa<CR>:mksession! ~/session.vim<CR>
-nnoremap <C-x> :wa<CR>:mksession! ~/session.vim<CR>:qa<CR>
+nnoremap <C-s> :wa<CR>:mksession! ./session.vim<CR>
+nnoremap <C-x> :wa<CR>:mksession! ./session.vim<CR>:qa<CR>
 
 nnoremap <C-y> kyyp
 
@@ -89,7 +96,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
-let g:indentLine_enabled = 1
+" let g:indentLine_enabled = 1
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -99,4 +106,14 @@ vmap <C-c> "+y
 
 set fileencodings=utf-8,gb18030,utf-16,big5
 
+" for tmux
+if &term =~ '^screen'
+  " tmux will send xterm-style keys when its xterm-keys option is on
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+endif
 
+" clipper
+nnoremap <leader>y :call system('nc localhost 8377', @0)<CR>

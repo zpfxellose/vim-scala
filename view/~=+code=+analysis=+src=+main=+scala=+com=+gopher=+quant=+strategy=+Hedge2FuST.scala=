@@ -16,21 +16,6 @@ silent! normal! zE
 46,162fold
 166,181fold
 185,194fold
-198,246fold
-250,288fold
-292,315fold
-319,329fold
-333,348fold
-352,379fold
-383,437fold
-441,540fold
-544,579fold
-583,589fold
-593,603fold
-607,627fold
-630,662fold
-666,690fold
-694,697fold
 18
 normal! zo
 19
@@ -47,40 +32,12 @@ normal! zc
 normal! zc
 185
 normal! zc
-250
-normal! zc
-292
-normal! zc
-319
-normal! zc
-333
-normal! zc
-352
-normal! zc
-383
-normal! zc
-441
-normal! zc
-544
-normal! zc
-583
-normal! zc
-593
-normal! zc
-607
-normal! zc
-630
-normal! zc
-666
-normal! zc
-694
-normal! zc
-let s:l = 200 - ((36 * winheight(0) + 16) / 33)
+let s:l = 199 - ((184 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-200
-normal! 0
+199
+normal! 02|
 lcd ~/code/analysis
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
